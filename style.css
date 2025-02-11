@@ -1,29 +1,28 @@
-*{
+* {
     font-family: 'Fira Sans';
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: 'Poppins', sans-serif;
     background-color: #f5f5f5;
 }
 
-
-nav{
+nav {
     display: flexbox;
     padding: 20px 30%;
     background-color: #160E1B;
 }
 
-nav ul{
+nav ul {
     display: flex;
     list-style: none;
     justify-content: space-between;
 }
 
-nav ul li a{
+nav ul li a {
     text-decoration: none;
     color: #00FFFF;
     font-size: 18px;
@@ -33,43 +32,46 @@ nav ul li a{
     transition: .3s;
 }
 
-nav ul li a:hover{
+nav ul li a:hover {
     background-color: #00FFFF;
     color: #160E1B;
     transition: .2s;
 }
-main{
+
+main {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     height: auto;
     background-color: #f5f5f5;
-    
 }
-section{
+
+section {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
     background-color: #fff;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-#Home{
+#Home {
     display: flex;
     background-color: #160E1B;
     width: 100%;
     min-height: 720px;
     position: relative;
-
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
-    flex-direction: column; /* Cambiado a column para mejor responsividad */
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
+    flex-direction: column;
+    /* Cambiado a column para mejor responsividad */
 }
 
-#Home .content{
+#Home .content {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -80,24 +82,23 @@ section{
     margin: 0 auto;
 }
 
-#home .content div{
+#home .content div {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 100%;
 }
-#Home .content h1{
+
+#Home .content h1 {
     color: #00FFFF;
     font-size: 80px;
     width: 80%;
     text-align: center;
-    line-height: 78%;
     font-weight: 700;
-    
 }
 
-#Home button{
+#Home button {
     padding: 10px 20px;
     background-color: #00FFFF;
     color: #160E1B;
@@ -112,54 +113,48 @@ section{
     margin-left: 20%;
     border: #00FFFF 2px solid;
     min-width: fit-content;
-
 }
 
-#Home button:hover{
+#Home button:hover {
     background-color: #160E1B;
     color: #00FFFF;
     transition: .2s;
 }
 
 
-#Home img{
-    width: 45%;
-    height: 100%;
-    margin: 20px;
+#Home .carousel {
+    width: 100%;
 }
 
-
-#Home .carousel{
-    width: 50%;
+#Home .carousel {
     height: auto;
     position: relative;
     top: 0;
-    left: 25%;
+    right: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 75px;
 }
 
-
-#Home .carousel .slide{
+#Home .carousel .slide {
     display: none;
-    transition: 5s; /* Añade una transición suave */
-    opacity: 0; /* Inicialmente oculto */
-    color:#DEE7FF;
-}
-#Home .carousel > .slide.active{
-    display: flex;
-    transition: 5s;
-    flex-direction: row;
-    opacity: 1; /* Muestra el slide */
-    width: 100%;
-    justify-content: center; /* Asegura que el contenido del slide esté centrado horizontalmente */
-    align-items: center; /* Asegura que el contenido del slide esté centrado verticalmente */
+    color: #DEE7FF;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
 }
 
-#Home .carousel > button.next-button,
-#Home .carousel > button.prev-button{
+#Home .carousel > .slide.active {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    opacity: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+#Home .carousel>button.next-button,
+#Home .carousel>button.prev-button {
     border: none;
     border-radius: 0;
     background-color: transparent;
@@ -177,132 +172,158 @@ section{
     align-items: center;
 }
 
-#Home .carousel > button.next-button{
-    right: 30px;
+#Home .carousel>button.next-button:hover {
+    transform: scale(1.2);
+    filter: brightness(1.2);
 }
 
-#Home .carousel > button.prev-button{
-    transform: rotate(180deg);/* usamos la misma imagen solo que la rotamos */
-    left: 30px;
+#Home .carousel>button.prev-button:hover {
+    transform: rotate(180deg) scale(1.2);
+    /* evita que la imagen se vea al revés */
+    filter: brightness(1.2);
 }
 
-#Home .carousel img{
-    width: calc(60% - 125px);
+#Home .carousel>button.next-button {
+    right: 2%;
+}
+
+#Home .carousel>button.prev-button {
+    transform: rotate(180deg);
+    /* usamos la misma imagen solo que la rotamos */
+    left: 2%;
+}
+
+#Home .carousel img {
+    width: calc(100% - 250px);
     height: auto;
     object-fit: cover;
     border-radius: 20px 100px;
 }
 
-#Home .carousel .text{
-    width: calc(40% - 125px);
+#Home .carousel .text {
+    width: calc(100% - 250px);
+    max-width: calc(100% - 240px);
+    text-align: center;
+    margin-bottom: 20px;
 }
-.next{
+
+.next {
     width: 30%;
     position: absolute;
     bottom: 20px;
-    left: 50%; /* Posiciona el contenedor en el centro horizontalmente */
-    transform: translateX(-50%); /* Ajusta la posición para centrarlo */
+    left: 50%;
+    transform: translateX(-50%);
     color: #c0c0c0;
     text-align: center;
     display: flex;
     align-items: center;
     flex-direction: column;
 }
+
 /* Animacion hecha mediante keyframes por facilidad y practicidad */
 @keyframes float {
     0% {
         transform: translateY(0px);
     }
+
     50% {
         transform: translateY(10px);
     }
+
     100% {
         transform: translateY(0px);
     }
 }
-.next img, #Services .next img, #Home .next img, #About .next img{
+
+.next img,
+#Services .next img,
+#Home .next img,
+#About .next img {
     width: 20px;
     margin: 20px auto 0 auto;
     animation: float 1s infinite;
 }
 
-
-
-#About{
+#About {
     position: relative;
     display: flex;
     flex-direction: column;
     background-color: #DEE7FF;
     padding: 20px;
     height: auto;
-    align-items: center; /* Centra verticalmente */
-    justify-content: center; /* Centra horizontalmente */
+    align-items: center;
+    justify-content: center;
     width: 100%;
     padding-bottom: 50px;
+    text-align: center;
 }
 
-#About h2{
+#About h2 {
     font-size: 45px;
     font-weight: 700;
     color: #160E1B;
     margin: 20px auto;
 }
 
-#About p{
+#About p {
     font-size: 20px;
     color: #160E1B;
     margin: 20px auto;
     text-align: center;
 }
 
-#Services{
+#Services {
     position: relative;
     display: flex;
-    flex-direction: row; /* Mantiene la dirección en filas */
+    flex-direction: row;
     background-color: #160E1B;
     padding: 20px;
     height: auto;
-    align-items: center; /* Centra verticalmente */
-    justify-content: center; /* Centra horizontalmente */
+    align-items: center;
+    justify-content: center;
     width: 100%;
 }
-#Services h2 b{
+
+#Services h2 b {
     font-size: 45px;
     font-weight: 700;
 }
-#Services h2{
+
+#Services h2 {
     font-size: 40px;
     font-weight: 400;
     color: white;
-    margin: 20px auto ;
+    margin: 20px auto;
 }
 
-#Services ul{
+#Services ul {
     display: flex;
     flex-direction: column;
     color: white;
     margin: 20px auto;
-
 }
-#Services ul li{
+
+#Services ul li {
     display: flex;
     align-items: center;
     margin: 10px 0;
     font-size: 20px;
 }
-#Services span{
+
+#Services span {
     color: white;
     margin: 20px auto;
     font-size: 20px;
 }
 
-#Services span span{
+#Services span span {
     margin: 0 10px;
     color: #2196F3;
     font-weight: 700;
     font-size: 31px;
 }
-.icon{
+
+.icon {
     background-image: url(/img/done.png);
     height: 25px;
     width: 25px;
@@ -310,14 +331,14 @@ section{
     margin-right: 10px;
 }
 
-#Services button{
+#Services button {
     padding: 10px 20px;
     background-color: #2196F3;
     color: #160E1B;
     font-size: 28px;
     font-weight: 800;
     border: none;
-    border-radius:  100px 5px;
+    border-radius: 100px 5px;
     margin-top: 20px;
     cursor: pointer;
     transition: .3s;
@@ -326,16 +347,36 @@ section{
     transition: .3s;
 }
 
-#Services button:hover{
+#Services button:hover {
     background-color: #160E1B;
     color: #2196F3;
     transition: .2s;
 }
 
-#Services img{
+@keyframes rotating {
+    0% {
+        transform: rotate(-3deg);
+    }
+
+    50% {
+        transform: rotate(3deg);
+    }
+
+    100% {
+        transform: rotate(-3deg);
+    }
+}
+
+#Services img {
     width: 30%;
     height: 100%;
-    margin: 20px;
+    margin: 20px 30px;
+    animation: rotating 2s infinite;
+}
+
+#Services img:hover {
+    filter: brightness(1.2);
+
 }
 
 #Contact {
@@ -344,19 +385,21 @@ section{
     background-color: #DEE7FF;
     padding: 20px;
     height: auto;
-    align-items: center; /* Centra verticalmente */
-    justify-content: center; /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente */
+    justify-content: center;
+    /* Centra horizontalmente */
     width: 100%;
 }
 
-#Contact h2{
+#Contact h2 {
     font-size: 45px;
     font-weight: 700;
     color: #160E1B;
     margin: 20px auto;
 }
 
-#Contact form{
+#Contact form {
     display: flex;
     flex-direction: column;
     width: 50%;
@@ -364,7 +407,7 @@ section{
     font-family: 'Fira Sans';
 }
 
-#Contact form input{
+#Contact form input {
     padding: 10px 20px 10px 30px;
     margin: 10px 0;
     border: none;
@@ -372,7 +415,7 @@ section{
     font-size: 18px;
 }
 
-#Contact form textarea{
+#Contact form textarea {
     padding: 10px 20px;
     margin: 10px 0;
     border: none;
@@ -380,7 +423,7 @@ section{
     font-size: 18px;
 }
 
-#Contact form button{
+#Contact form button {
     padding: 10px 20px;
     background-color: #2196F3;
     color: #160E1B;
@@ -394,13 +437,13 @@ section{
     border: #2196F3 2px solid;
 }
 
-#Contact form button:hover{
+#Contact form button:hover {
     background-color: transparent;
     color: #2196F3;
     transition: .2s;
 }
 
-footer{
+footer {
     background-color: #160E1B;
     height: 60px;
     color: white;
@@ -408,18 +451,31 @@ footer{
     padding: 20px 0;
     font-family: 'Fira Sans';
 }
+
 /* Añado un media query para hacer la página responsive */
+@media screen and (max-width: 1250px) {
+    #Home .carousel {
+        width: 125%;
+    }
+
+    #Home .carousel img {
+        width: calc(100% - 150px);
+    }
+
+}
+
 @media screen and (max-width: 1000px) {
 
-    nav{
+    nav {
         padding: 20px 9%;
     }
-    #Home .content{
+
+    #Home .content {
         flex-direction: column;
         height: auto;
     }
 
-    #Home .content .text{
+    #Home .content .text {
         order: 2;
         padding-bottom: 60px;
         width: 100%;
@@ -428,28 +484,54 @@ footer{
         margin: 0;
     }
 
-    #Home .content div{
+    #Home .content div {
         order: 2;
         padding-bottom: 60px;
         width: 100%;
         justify-content: center;
     }
-    #Home .content h1{
+
+    #Home .content h1 {
         font-size: 50px;
         width: 100%;
         margin: 0;
     }
-    #Home button{
+
+    #Home button {
         margin: 25px 0;
     }
-    #Home img{
+
+    #Home .carousel {
         width: 60%;
         height: 100%;
         order: 1;
-        margin: 20px;
+        margin: 1%;
     }
 
-    #Services{
+    #Home .carousel>button.prev-button,
+    #Home .carousel>button.next-button {
+        width: 40px;
+        height: 40px;
+        top: calc(50% - 20px);
+    }
+
+    #Home .carousel>button.next-button {
+        right: 0px;
+    }
+
+    #Home .carousel>button.prev-button {
+        left: 0px;
+    }
+
+    #Home .carousel img,
+    #Home .carousel .text {
+        width: 100%;
+        max-width: calc(100% - 100px);
+        order: 1;
+        padding-bottom: 20px;
+    }
+
+    #Services {
         display: flex;
         flex-direction: column;
         height: auto;
@@ -457,29 +539,55 @@ footer{
         justify-content: center;
     }
 
-    #Services img{
+    #Services img {
         width: 50%;
         height: 100%;
         order: 1;
         margin: 20px auto;
     }
-    #Services .container{
+
+    #Services .container {
         order: 2;
+    }
+
+    #Contact form {
+        width: 75%;
     }
 }
 
-
-
 @media screen and (max-width: 500px) {
-    nav{
-        padding: 20px 3%;
+    nav {
+        padding: 20px 2%;
     }
 
     nav ul li a {
-        font-size: 16px;
+        font-size: 15px;
+    }
+
+    #Services {
+        text-align: center;
+    }
+
+    #Services img {
+        width: 80%;
+        height: 100%;
+        order: 1;
+        margin: 20px auto;
+    }
+
+    #Services button {
+        margin: 20px auto;
+        align-self: center;
+    }
+
+    #Services ul {
+        margin: 30px;
+    }
+
+    #Contact form {
+        width: 90%;
     }
 }
-
 
 #form-messages p {
     margin: 10px 0;
