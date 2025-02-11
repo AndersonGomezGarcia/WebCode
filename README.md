@@ -7,7 +7,7 @@ Este proyecto es una página web para AnderWeb, una empresa dedicada a la creaci
 El proyecto está compuesto por los siguientes archivos:
 
 - `index.html`: El archivo principal de la página web.
-- `style.css`: Archivo de estilos CSS para la página.
+- `style.css`: Archivo de estilos CSS para la página. Los estilos siguen el orden de las etiquetas HTML y, en las media queries, aplica el mismo orden pero solo con los estilos necesarios a modificar.
 - `img/`: Carpeta que contiene las imágenes utilizadas en la página.
 - `script.js`: Archivo de Javascript para funcionalidades dinamicas.
 
