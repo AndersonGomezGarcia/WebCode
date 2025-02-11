@@ -1,0 +1,498 @@
+*{
+    font-family: 'Fira Sans';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+}
+
+
+nav{
+    display: flexbox;
+    padding: 20px 30%;
+    background-color: #160E1B;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #00FFFF;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: .3s;
+}
+
+nav ul li a:hover{
+    background-color: #00FFFF;
+    color: #160E1B;
+    transition: .2s;
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+    background-color: #f5f5f5;
+    
+}
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#Home{
+    display: flex;
+    background-color: #160E1B;
+    width: 100%;
+    min-height: 720px;
+    position: relative;
+
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    flex-direction: column; /* Cambiado a column para mejor responsividad */
+}
+
+#Home .content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    color: #fff;
+    padding: 20px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#home .content div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+#Home .content h1{
+    color: #00FFFF;
+    font-size: 80px;
+    width: 80%;
+    text-align: center;
+    line-height: 78%;
+    font-weight: 700;
+    
+}
+
+#Home button{
+    padding: 10px 20px;
+    background-color: #00FFFF;
+    color: #160E1B;
+    font-size: 28px;
+    font-weight: 800;
+    border: none;
+    border-radius: 5px 100px;
+    margin: 20px;
+    cursor: pointer;
+    transition: .3s;
+    width: 50%;
+    margin-left: 20%;
+    border: #00FFFF 2px solid;
+    min-width: fit-content;
+
+}
+
+#Home button:hover{
+    background-color: #160E1B;
+    color: #00FFFF;
+    transition: .2s;
+}
+
+
+#Home img{
+    width: 45%;
+    height: 100%;
+    margin: 20px;
+}
+
+
+#Home .carousel{
+    width: 50%;
+    height: auto;
+    position: relative;
+    top: 0;
+    left: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 75px;
+}
+
+
+#Home .carousel .slide{
+    display: none;
+    transition: 5s; /* Añade una transición suave */
+    opacity: 0; /* Inicialmente oculto */
+    color:#DEE7FF;
+}
+#Home .carousel > .slide.active{
+    display: flex;
+    transition: 5s;
+    flex-direction: row;
+    opacity: 1; /* Muestra el slide */
+    width: 100%;
+    justify-content: center; /* Asegura que el contenido del slide esté centrado horizontalmente */
+    align-items: center; /* Asegura que el contenido del slide esté centrado verticalmente */
+}
+
+#Home .carousel > button.next-button,
+#Home .carousel > button.prev-button{
+    border: none;
+    border-radius: 0;
+    background-color: transparent;
+    width: 50px;
+    height: 50px;
+    margin: 0;
+    background-image: url(/img/arrow-right.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    top: calc(50% - 10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#Home .carousel > button.next-button{
+    right: 30px;
+}
+
+#Home .carousel > button.prev-button{
+    transform: rotate(180deg);/* usamos la misma imagen solo que la rotamos */
+    left: 30px;
+}
+
+#Home .carousel img{
+    width: calc(60% - 125px);
+    height: auto;
+    object-fit: cover;
+    border-radius: 20px 100px;
+}
+
+#Home .carousel .text{
+    width: calc(40% - 125px);
+}
+.next{
+    width: 30%;
+    position: absolute;
+    bottom: 20px;
+    left: 50%; /* Posiciona el contenedor en el centro horizontalmente */
+    transform: translateX(-50%); /* Ajusta la posición para centrarlo */
+    color: #c0c0c0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+/* Animacion hecha mediante keyframes por facilidad y practicidad */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+.next img, #Services .next img, #Home .next img, #About .next img{
+    width: 20px;
+    margin: 20px auto 0 auto;
+    animation: float 1s infinite;
+}
+
+
+
+#About{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #DEE7FF;
+    padding: 20px;
+    height: auto;
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+#About h2{
+    font-size: 45px;
+    font-weight: 700;
+    color: #160E1B;
+    margin: 20px auto;
+}
+
+#About p{
+    font-size: 20px;
+    color: #160E1B;
+    margin: 20px auto;
+    text-align: center;
+}
+
+#Services{
+    position: relative;
+    display: flex;
+    flex-direction: row; /* Mantiene la dirección en filas */
+    background-color: #160E1B;
+    padding: 20px;
+    height: auto;
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    width: 100%;
+}
+#Services h2 b{
+    font-size: 45px;
+    font-weight: 700;
+}
+#Services h2{
+    font-size: 40px;
+    font-weight: 400;
+    color: white;
+    margin: 20px auto ;
+}
+
+#Services ul{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    margin: 20px auto;
+
+}
+#Services ul li{
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    font-size: 20px;
+}
+#Services span{
+    color: white;
+    margin: 20px auto;
+    font-size: 20px;
+}
+
+#Services span span{
+    margin: 0 10px;
+    color: #2196F3;
+    font-weight: 700;
+    font-size: 31px;
+}
+.icon{
+    background-image: url(/img/done.png);
+    height: 25px;
+    width: 25px;
+    background-size: cover;
+    margin-right: 10px;
+}
+
+#Services button{
+    padding: 10px 20px;
+    background-color: #2196F3;
+    color: #160E1B;
+    font-size: 28px;
+    font-weight: 800;
+    border: none;
+    border-radius:  100px 5px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: .3s;
+    border: #2196F3 2px solid;
+    margin: 20px auto 20px 100px;
+    transition: .3s;
+}
+
+#Services button:hover{
+    background-color: #160E1B;
+    color: #2196F3;
+    transition: .2s;
+}
+
+#Services img{
+    width: 30%;
+    height: 100%;
+    margin: 20px;
+}
+
+#Contact {
+    display: flex;
+    flex-direction: column;
+    background-color: #DEE7FF;
+    padding: 20px;
+    height: auto;
+    align-items: center; /* Centra verticalmente */
+    justify-content: center; /* Centra horizontalmente */
+    width: 100%;
+}
+
+#Contact h2{
+    font-size: 45px;
+    font-weight: 700;
+    color: #160E1B;
+    margin: 20px auto;
+}
+
+#Contact form{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 20px auto;
+    font-family: 'Fira Sans';
+}
+
+#Contact form input{
+    padding: 10px 20px 10px 30px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px 30px;
+    font-size: 18px;
+}
+
+#Contact form textarea{
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px 50px;
+    font-size: 18px;
+}
+
+#Contact form button{
+    padding: 10px 20px;
+    background-color: #2196F3;
+    color: #160E1B;
+    font-size: 28px;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px 100px;
+    margin: 20px 0;
+    cursor: pointer;
+    transition: .3s;
+    border: #2196F3 2px solid;
+}
+
+#Contact form button:hover{
+    background-color: transparent;
+    color: #2196F3;
+    transition: .2s;
+}
+
+footer{
+    background-color: #160E1B;
+    height: 60px;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-family: 'Fira Sans';
+}
+/* Añado un media query para hacer la página responsive */
+@media screen and (max-width: 1000px) {
+
+    nav{
+        padding: 20px 9%;
+    }
+    #Home .content{
+        flex-direction: column;
+        height: auto;
+    }
+
+    #Home .content .text{
+        order: 2;
+        padding-bottom: 60px;
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        margin: 0;
+    }
+
+    #Home .content div{
+        order: 2;
+        padding-bottom: 60px;
+        width: 100%;
+        justify-content: center;
+    }
+    #Home .content h1{
+        font-size: 50px;
+        width: 100%;
+        margin: 0;
+    }
+    #Home button{
+        margin: 25px 0;
+    }
+    #Home img{
+        width: 60%;
+        height: 100%;
+        order: 1;
+        margin: 20px;
+    }
+
+    #Services{
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        padding-bottom: 40px;
+        justify-content: center;
+    }
+
+    #Services img{
+        width: 50%;
+        height: 100%;
+        order: 1;
+        margin: 20px auto;
+    }
+    #Services .container{
+        order: 2;
+    }
+}
+
+
+
+@media screen and (max-width: 500px) {
+    nav{
+        padding: 20px 3%;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+}
+
+
+#form-messages p {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#form-messages p[style*="color: red;"] {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+
+#form-messages p[style*="color: green;"] {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
