@@ -28,8 +28,14 @@ El formulario de contacto en la sección `#Contact` incluye las siguientes valid
 
 ## Instalación
 
-1. Descarga el repositorio en tu máquina local.
-2. Abre el archivo `index.html` en tu navegador web.
+1. Opcion 1
+a. Entra al siguiente enlace https://andersongomezgarcia.github.io/WebCode/
+2. Opcion 2
+ a. Descarga el repositorio en tu máquina local.
+ b. Abre el archivo `index.html` en tu navegador web.
+
+
+
 
 ## Uso
 
