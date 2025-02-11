@@ -41,6 +41,4 @@ El carrusel se encuentra en la sección de inicio (`#Home`). Utiliza los botones
 
 El formulario de contacto se encuentra en la sección `#Contact`. Completa todos los campos y haz clic en "Enviar". Los mensajes de error o confirmación se mostrarán de forma dinámica sin recargar la página.
 
-## Código
 
-### HTML
